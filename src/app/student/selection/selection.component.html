@@ -1,0 +1,94 @@
+<!-- Navbar -->
+
+<!-- Full Page Intro -->
+<div class=" full-page-intro bg-img ">
+
+    <!-- Mask & flexbox options-->
+    <div class="mask d-flex justify-content-center align-items-center">
+
+
+        <!-- Content -->
+        <div class="container mb-5 pb-5">
+            <!--Grid row-->
+            <div class="row wow fadeIn ">
+
+                <div class="col-lg-6 pt-5 mt-5 pb-5 mb-5 bor-right animated fadeIn">
+                    <!-- onclick="location.href='course_search.php'" -->
+                    <div>
+                        <h2 class="h2-responsive weight-400">What do you want to <br> <span class="skc">learn
+                                today.</span></h2>
+                        <form class="form-inline md-form mr-auto mb-4"  [formGroup]="CourseSearch" (ngSubmit)="onSubmit()">
+                            <input class="form-control mr-sm-2" type="text" name="search"
+                                style="border-bottom: 2px solid #01783d;" placeholder="Enter Course Name"
+                                aria-label="Search">
+                            <button class="btn skbg btn-rounded  my-0" name="submit" value="submit"
+                                type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+                <div class=" col-lg-6 text-center sel-card animated fadeIn">
+                    <div>
+                        <h2 class="h2-responsive text-dark weight-400"><span class="skc">Common </span>Application Form
+                        </h2>
+                        <button routerLink='/caf'
+                            class="btn btn-success skbg mt-4 mb-4 btn-rounded ">Sign Up</button>
+                    </div>
+                    <div>
+                        <div class="mb-4   text-center text-md-left">
+                            <div class="row text-center card-sel mt-4">
+                                <div class="col-12">
+                                    <h2 class="h1-responsive text-white weight-400"><span>Why Skill Monks ?</span></h2>
+                                </div>
+                                <!-- Grid column -->
+                                <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom">
+
+                                    <!--Excerpt-->
+                                    <div class="card-body ">
+                                        <img src="assets/images/icons/tution.png" width="50px" class="mt-1">
+                                        <p class=" my-2">Get Connected with Best-in-Class Training Companies</p>
+                                    </div>
+                                </div>
+                                <!-- Grid column -->
+
+                                <!-- Grid column -->
+                                <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom">
+
+                                    <!--Excerpt-->
+                                    <div class="card-body ">
+                                        <img src="assets/images/icons/money.png" width="50px" class="mt-1">
+                                        <p class=" my-2">Assured Quality with Money Back Guarantee</p>
+                                    </div>
+                                </div>
+                                <!-- Grid column -->
+                                <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom">
+
+                                    <!--Excerpt-->
+                                    <div class="card-body ">
+                                        <img src="assets/images/icons/offer.png" width="50px" class="mt-1">
+                                        <p class=" my-2">Best Discount on Fee</p>
+                                    </div>
+                                </div>
+                                <!-- Grid column -->
+                                <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom ">
+
+                                    <!--Excerpt-->
+                                    <div class="card-body ">
+                                        <img src="assets/images/icons/qua.png" width="50px" class="mt-1">
+                                        <p class="p my-2">App that Keeps You Posted on Industry Trends and Opportunities
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Mask & flexbox options-->
+
+</div>

@@ -1,1 +1,74 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background-image: url('assets/images/stu.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  .skc {
+    color: #01783d!important
+  }
+  
+  .skbc {
+    background-color: #01783d!important;
+    color: #fff !important;
+  }
+  .skbg{
+    background: linear-gradient(to right, rgb(1, 120, 61) 0%, rgba(0, 0, 0, 0.8) 100%);
+    color: white !important;
+  }
+  
+  .btn-rounded {
+    border-radius: 10em !important;
+  }
+  
+//   home page
+.zoom:hover button {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  
+  .zoom button {
+    -webkit-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    transition: all .2s linear;
+  }
+//   student selection page
+.bor-right {
+    border-right: 2px solid green;
+    height: 100%;
+  }
+  
+  .card-sel .card-body {
+    padding: 5px 10px 10px 10px;
+    margin: 10px;
+    /* transition: initial; */
+    width: 100%;
+    height: 160px;  
+    background: rgba(1, 120, 61, 0.62);
+    color: #fff;
+    /* border-radius: 8px; */
+  }
+//   common application page
+.card-caf .card-body {
+    padding: 3px;
+    margin: 10px;
+    /* transition: initial; */
+    height: 150px;
+    background: rgba(1, 120, 61, 0.69);
+    color: rgb(255, 255, 255);
+    /* border-radius: 8px; */
+  }
+  
+  .zoom:hover .card-body {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+  
+  .zoom .card-body {
+    -webkit-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    transition: all .2s linear;
+  }
