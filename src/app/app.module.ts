@@ -1,4 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 import { NgModule, NO_ERRORS_SCHEMA  } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -11,7 +13,7 @@ import { SelectionComponent } from './student/selection/selection.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CommonApplicationComponent } from './student/common-application/common-application.component';
 import { HttpClientModule } from "@angular/common/http";
-
+import { StudentDataComponent } from './admin/student-data/student-data.component';
 
 
 @NgModule({
@@ -22,15 +24,18 @@ import { HttpClientModule } from "@angular/common/http";
     HomeComponent,
     SelectionComponent,
     PageNotFoundComponent,
-    CommonApplicationComponent
+    CommonApplicationComponent,
+    StudentDataComponent
  
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent],

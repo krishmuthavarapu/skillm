@@ -24,8 +24,8 @@ export class CommonApplicationComponent implements OnInit {
       qualification: ['', Validators.required],
       course_interested: ['', Validators.required],
       city: ['', Validators.required],
-      acceptTerms: [false, Validators.requiredTrue]
     });
+
   }
   // convenience getter for easy access to form fields
   get f() { return this.CommonApplicationForm.controls; }
@@ -38,29 +38,30 @@ export class CommonApplicationComponent implements OnInit {
     if (this.CommonApplicationForm.invalid) {
       return;
     }
-    let Params = new HttpParams();
+    // let params = new HttpParams();
+    var fd:FormData=new FormData()
     // Begin assigning parameters
-    Params = Params.append('username', this.CommonApplicationForm.value.username);
-    Params = Params.append('number', this.CommonApplicationForm.value.number);
-    Params = Params.append('passing_year', this.CommonApplicationForm.value.passing_year);
-    Params = Params.append('email', this.CommonApplicationForm.value.email);
-    Params = Params.append('qualification', this.CommonApplicationForm.value.qualification);
-    Params = Params.append('course_interested', this.CommonApplicationForm.value.course_interested);
-    Params = Params.append('city', this.CommonApplicationForm.value.city);
+    fd.append('username', this.CommonApplicationForm.value.username);
+    fd.append('number', this.CommonApplicationForm.value.number);
+    fd.append('passing_year', this.CommonApplicationForm.value.passing_year);
+    fd.append('email', this.CommonApplicationForm.value.email);
+    fd.append('qualification', this.CommonApplicationForm.value.qualification);
+    fd.append('course_interested', this.CommonApplicationForm.value.course_interested);
+    fd.append('city', this.CommonApplicationForm.value.city);
 
-    return this.http.get('http://localhost/angular/post.php'
-    ,{  
-    params: { params: Params }
-    }).subscribe(data => {
-      this.posts = data;
-      // show data in console
-      console.log(this.posts);
-      });
+    this.http.post('http://localhost/angular/post.php'
+    , 
+     fd
+    ).subscribe(
+      res => {
+        const response = res.toString();
+    }
+      );
 
     // display form values on success
     // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.CommonApplicationForm.value, null, 4));
   }
-   // Initialize Params Object
+   // Initialize params Object
   
 
 onReset() {
