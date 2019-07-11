@@ -49,7 +49,7 @@ export class CommonApplicationComponent implements OnInit {
     fd.append('course_interested', this.CommonApplicationForm.value.course_interested);
     fd.append('city', this.CommonApplicationForm.value.city);
 
-    this.http.post('http://localhost/angular/post.php'
+    this.http.post('http://localhost/laravel57/public/api/adduserdetails'
     , 
      fd
     ).subscribe(
