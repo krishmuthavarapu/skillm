@@ -40,7 +40,9 @@ class User extends Authenticatable
     protected static function boot(){
         parent::boot();
         static::created(function ($user){
-            $user->profile->create();
+            $user->profile()->create([
+                'title' => $user -> username,
+            ]);
         });
     }
 
