@@ -14,6 +14,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { CommonApplicationComponent } from './student/common-application/common-application.component';
 import { HttpClientModule } from "@angular/common/http";
 import { StudentDataComponent } from './admin/student-data/student-data.component';
+import { StudentEditComponent } from './admin/student-edit/student-edit.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { StudentDataComponent } from './admin/student-data/student-data.componen
     SelectionComponent,
     PageNotFoundComponent,
     CommonApplicationComponent,
-    StudentDataComponent
+    StudentDataComponent,
+    StudentEditComponent
  
   ],
   imports: [
