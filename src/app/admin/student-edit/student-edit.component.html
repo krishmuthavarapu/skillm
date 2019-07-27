@@ -1,1 +1,109 @@
-<p>student-edit works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <form
+          [formGroup]="CommonApplicationForm"
+          (ngSubmit)="onSubmit()"
+          class="text-center  pr-lg-5 pl-lg-5 pt-lg-3 pb-lg-3 p-3 "
+        >
+          <input
+            type="text"
+            formControlName="username"
+            [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
+            class="form-control mb-3"
+            placeholder="Your Name"
+            required
+          />
+          <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">name is required</div>
+          </div>
+          <input
+            type="text"
+            formControlName="number"
+            [ngClass]="{ 'is-invalid': submitted && f.number.errors }"
+            class="form-control mb-3"
+            placeholder="Mobile Number"
+            required
+          />
+          <div *ngIf="submitted && f.number.errors" class="invalid-feedback">
+            <div *ngIf="f.number.errors.required">Number required</div>
+          </div>
+          <input
+            type="email"
+            formControlName="email"
+            [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+            class="form-control mb-3"
+            placeholder="E-Mail"
+            required
+          />
+          <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors.required">Email is required</div>
+            <div *ngIf="f.email.errors.email">
+              Email must be a valid email address
+            </div>
+          </div>
+          <input
+            type="text"
+            formControlName="passing_year"
+            [ngClass]="{ 'is-invalid': submitted && f.passing_year.errors }"
+            class="form-control mb-3"
+            placeholder="Year of passing"
+            required
+          />
+          <div
+            *ngIf="submitted && f.passing_year.errors"
+            class="invalid-feedback"
+          >
+            <div *ngIf="f.passing_year.errors.required">
+              Passing year is required
+            </div>
+          </div>
+          <input
+            type="text"
+            formControlName="qualification"
+            [ngClass]="{ 'is-invalid': submitted && f.qualification.errors }"
+            class="form-control mb-3"
+            placeholder="Qualification"
+            required
+          />
+          <div
+            *ngIf="submitted && f.qualification.errors"
+            class="invalid-feedback"
+          >
+            <div *ngIf="f.qualification.errors.required">
+              Qualification required
+            </div>
+          </div>
+          <input
+            type="text"
+            formControlName="course_interested"
+            [ngClass]="{
+              'is-invalid': submitted && f.course_interested.errors
+            }"
+            class="form-control mb-3"
+            placeholder="Course Interested In"
+            required
+          />
+          <div
+            *ngIf="submitted && f.course_interested.errors"
+            class="invalid-feedback"
+          >
+            <div *ngIf="f.course_interested.errors.required">required</div>
+          </div>
+          <input
+            type="text"
+            formControlName="city"
+            [ngClass]="{ 'is-invalid': submitted && f.city.errors }"
+            class="form-control mb-3"
+            placeholder="City"
+            required
+          />
+          <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+            <div *ngIf="f.city.errors.required">City required</div>
+          </div>
+          <!-- <button class="btn  skbc  my-4" [disabled]="!CommonApplicationForm.valid" >Sign Up</button> -->
+          <button class="btn  skbc  my-4">Update</button>
+        </form>
+        </div>
+    </div>
+</div>

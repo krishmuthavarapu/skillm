@@ -6,5 +6,6 @@ export class Caf{
     passing_year:string;
     qualification:string;
     course_interested:string;
-    city:string
+    city:string;
+    result:any
 }

@@ -1,138 +1,193 @@
 <div class="container mb-4">
-    <div class="row wow ">
-        <div class="col-12 mt-2 text-center mb-3">
-            <h1 class="skc">Common <span class="text-dark">Application Form</span></h1>
-        </div>
-        <div class="col-lg-6 col-md-6 mb-4   text-center text-md-left  animated fadeIn">
-            <div class="col-12 mt-4 text-center mb-0">
-                <h2 class="h2-responsive">Powering Your Career Growth.</h2>
-                <p class="">We help skill seekers in discovering their true mentors and fulfilling their skill needs in
-                    a personalised way</p>
-            </div>
-
-            <div class="row text-center card-caf mt-3">
-
-                <!-- Grid column -->
-                <div class="col-lg-6 col-md-12 mb-lg-0  mb-4 zoom ">
-
-                    <!--Excerpt-->
-                    <div class="card-body pt-3 pb-3">
-
-                        <img src="assets/images/icons/com.png" width="50px">
-                        <!-- <h5 class="font-weight-bold my-2">Support</h5> -->
-                        <p class="mb-0 mt-2">Personalised Career Guidance</p>
-
-                    </div>
-                </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom">
-
-                    <!--Excerpt-->
-                    <div class="card-body pt-3 pb-3">
-
-                        <img src="assets/images/icons/money.png" width="50px">
-                        <p class="mb-0 mt-2">Assured Quality with Money Back Guarantee</p>
-
-                    </div>
-                </div>
-                <!-- Grid column -->
-                <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom">
-
-                    <!--Excerpt-->
-                    <div class="card-body pt-3 pb-3">
-
-                        <img src="assets/images/icons/offer.png" width="50px">
-                        <p class="mb-0 mt-2">Best Discount on Fee</p>
-
-                    </div>
-                </div>
-                <!-- Grid column -->
-                <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom">
-
-                    <!--Excerpt-->
-                    <div class="card-body pt-3 pb-3">
-
-                        <img src="assets/images/icons/tution.png" width="50px">
-                        <p class="mb-0 mt-2">Get Connected with Best-in-Class Training Companies</p>
-
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom">
-
-                    <!--Excerpt-->
-                    <div class="card-body pt-3 pb-3">
-
-                        <img src="assets/images/icons/qua.png" width="50px">
-
-                        <p class="mb-0 mt-2">App that Keeps You Posted on Industry Trends and Opportunities</p>
-
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom">
-
-                    <!--Excerpt-->
-                    <div class="card-body pt-3 pb-3">
-
-                        <img src="assets/images/icons/discount.png" width="50px">
-
-                        <p class="mb-0 mt-2">Zero Percent Interest Loan Options</p>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="col-lg-1 d-none d-lg-block"></div>
-        <div class="col-lg-5 col-md-6 mb-3  animated fadeIn">
-            <!-- Default form login -->
-            <div class=" text-center pt-3  mt-5" style="    border-radius: 8px;background: rgba(0, 0, 0, 0.6);">
-                <h2 class=" text-white " style="font-weight:400"> Get Connected Now!</h2>
-                <hr class="hr-cus">
-
-                <form [formGroup]="CommonApplicationForm" (ngSubmit)="onSubmit()" class="text-center  pr-lg-5 pl-lg-5 pt-lg-3 pb-lg-3 p-3 ">
-                    <input type="text" formControlName="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }"  class="form-control mb-3" placeholder="Your Name"
-                        required>
-                        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-                            <div *ngIf="f.username.errors.required">name is required</div>
-                        </div>
-                    <input type="text" formControlName="number" [ngClass]="{ 'is-invalid': submitted && f.number.errors }" class="form-control mb-3" placeholder="Mobile Number"
-                        required>
-                        <div *ngIf="submitted && f.number.errors" class="invalid-feedback">
-                            <div *ngIf="f.number.errors.required">Number required</div>
-                        </div>
-                    <input type="email" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" class="form-control mb-3" placeholder="E-Mail" required>
-                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                        <div *ngIf="f.email.errors.required">Email is required</div>
-                        <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
-                    </div>
-                    <input type="text" formControlName="passing_year" [ngClass]="{ 'is-invalid': submitted && f.passing_year.errors }" class="form-control mb-3"  placeholder="Year of passing"
-                        required>
-                        <div *ngIf="submitted && f.passing_year.errors" class="invalid-feedback">
-                            <div *ngIf="f.passing_year.errors.required">Passing year is required</div>
-                        </div>
-                    <input type="text" formControlName="qualification" [ngClass]="{ 'is-invalid': submitted && f.qualification.errors }" class="form-control mb-3"  placeholder="Qualification"
-                        required>
-                        <div *ngIf="submitted && f.qualification.errors" class="invalid-feedback">
-                            <div *ngIf="f.qualification.errors.required">Qualification required</div>
-                        </div>
-                    <input type="text" formControlName="course_interested" [ngClass]="{ 'is-invalid': submitted && f.course_interested.errors }" class="form-control mb-3"
-                        placeholder="Course Interested In" required>
-                        <div *ngIf="submitted && f.course_interested.errors" class="invalid-feedback">
-                            <div *ngIf="f.course_interested.errors.required">required</div>
-                        </div>
-                    <input type="text" formControlName="city" [ngClass]="{ 'is-invalid': submitted && f.city.errors }" class="form-control mb-3" placeholder="City" required>
-                    <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
-                        <div *ngIf="f.city.errors.required">City required</div>
-                    </div>
-                    <!-- <button class="btn  skbc  my-4" [disabled]="!CommonApplicationForm.valid" >Sign Up</button> -->
-                    <button class="btn  skbc  my-4"  >Sign Up</button>
-                </form>
-            </div>
-
-
-
-        </div>
+  <div class="row wow ">
+    <div class="col-12 mt-2 text-center mb-3">
+      <h1 class="skc">
+        Common <span class="text-dark">Application Form</span>
+      </h1>
     </div>
+    <div
+      class="col-lg-6 col-md-6 mb-4   text-center text-md-left  animated fadeIn"
+    >
+      <div class="col-12 mt-4 text-center mb-0">
+        <h2 class="h2-responsive">Powering Your Career Growth.</h2>
+        <p class="">
+          We help skill seekers in discovering their true mentors and fulfilling
+          their skill needs in a personalised way
+        </p>
+      </div>
+
+      <div class="row text-center card-caf mt-3">
+        <!-- Grid column -->
+        <div class="col-lg-6 col-md-12 mb-lg-0  mb-4 zoom ">
+          <!--Excerpt-->
+          <div class="card-body pt-3 pb-3">
+            <img src="assets/images/icons/com.png" width="50px" />
+            <!-- <h5 class="font-weight-bold my-2">Support</h5> -->
+            <p class="mb-0 mt-2">Personalised Career Guidance</p>
+          </div>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom">
+          <!--Excerpt-->
+          <div class="card-body pt-3 pb-3">
+            <img src="assets/images/icons/money.png" width="50px" />
+            <p class="mb-0 mt-2">Assured Quality with Money Back Guarantee</p>
+          </div>
+        </div>
+        <!-- Grid column -->
+        <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom">
+          <!--Excerpt-->
+          <div class="card-body pt-3 pb-3">
+            <img src="assets/images/icons/offer.png" width="50px" />
+            <p class="mb-0 mt-2">Best Discount on Fee</p>
+          </div>
+        </div>
+        <!-- Grid column -->
+        <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom">
+          <!--Excerpt-->
+          <div class="card-body pt-3 pb-3">
+            <img src="assets/images/icons/tution.png" width="50px" />
+            <p class="mb-0 mt-2">
+              Get Connected with Best-in-Class Training Companies
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom">
+          <!--Excerpt-->
+          <div class="card-body pt-3 pb-3">
+            <img src="assets/images/icons/qua.png" width="50px" />
+
+            <p class="mb-0 mt-2">
+              App that Keeps You Posted on Industry Trends and Opportunities
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-12 mb-lg-0 mb-4 zoom">
+          <!--Excerpt-->
+          <div class="card-body pt-3 pb-3">
+            <img src="assets/images/icons/discount.png" width="50px" />
+
+            <p class="mb-0 mt-2">Zero Percent Interest Loan Options</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-1 d-none d-lg-block"></div>
+    <div class="col-lg-5 col-md-6 mb-3  animated fadeIn">
+      <!-- Default form login -->
+      <div
+        class=" text-center pt-3  mt-5"
+        style="    border-radius: 8px;background: rgba(0, 0, 0, 0.6);"
+      >
+        <h2 class=" text-white " style="font-weight:400">Get Connected Now!</h2>
+        <hr class="hr-cus" />
+
+        <form
+          [formGroup]="CommonApplicationForm"
+          (ngSubmit)="onSubmit()"
+          class="text-center  pr-lg-5 pl-lg-5 pt-lg-3 pb-lg-3 p-3 "
+        >
+          <input
+            type="text"
+            formControlName="username"
+            [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
+            class="form-control mb-3"
+            placeholder="Your Name"
+            required
+          />
+          <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">name is required</div>
+          </div>
+          <input
+            type="text"
+            formControlName="number"
+            [ngClass]="{ 'is-invalid': submitted && f.number.errors }"
+            class="form-control mb-3"
+            placeholder="Mobile Number"
+            required
+          />
+          <div *ngIf="submitted && f.number.errors" class="invalid-feedback">
+            <div *ngIf="f.number.errors.required">Number required</div>
+          </div>
+          <input
+            type="email"
+            formControlName="email"
+            [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+            class="form-control mb-3"
+            placeholder="E-Mail"
+            required
+          />
+          <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors.required">Email is required</div>
+            <div *ngIf="f.email.errors.email">
+              Email must be a valid email address
+            </div>
+          </div>
+          <input
+            type="text"
+            formControlName="passing_year"
+            [ngClass]="{ 'is-invalid': submitted && f.passing_year.errors }"
+            class="form-control mb-3"
+            placeholder="Year of passing"
+            required
+          />
+          <div
+            *ngIf="submitted && f.passing_year.errors"
+            class="invalid-feedback"
+          >
+            <div *ngIf="f.passing_year.errors.required">
+              Passing year is required
+            </div>
+          </div>
+          <input
+            type="text"
+            formControlName="qualification"
+            [ngClass]="{ 'is-invalid': submitted && f.qualification.errors }"
+            class="form-control mb-3"
+            placeholder="Qualification"
+            required
+          />
+          <div
+            *ngIf="submitted && f.qualification.errors"
+            class="invalid-feedback"
+          >
+            <div *ngIf="f.qualification.errors.required">
+              Qualification required
+            </div>
+          </div>
+          <input
+            type="text"
+            formControlName="course_interested"
+            [ngClass]="{
+              'is-invalid': submitted && f.course_interested.errors
+            }"
+            class="form-control mb-3"
+            placeholder="Course Interested In"
+            required
+          />
+          <div
+            *ngIf="submitted && f.course_interested.errors"
+            class="invalid-feedback"
+          >
+            <div *ngIf="f.course_interested.errors.required">required</div>
+          </div>
+          <input
+            type="text"
+            formControlName="city"
+            [ngClass]="{ 'is-invalid': submitted && f.city.errors }"
+            class="form-control mb-3"
+            placeholder="City"
+            required
+          />
+          <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+            <div *ngIf="f.city.errors.required">City required</div>
+          </div>
+          <!-- <button class="btn  skbc  my-4" [disabled]="!CommonApplicationForm.valid" >Sign Up</button> -->
+          <button class="btn  skbc  my-4">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
