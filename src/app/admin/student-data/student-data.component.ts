@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {CafApiService} from '../../caf-api.service';
 import { Caf } from '../../caf';
+import { Router, ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-student-data',
@@ -10,7 +12,7 @@ import { Caf } from '../../caf';
 export class StudentDataComponent implements OnInit {
   students: Caf[];
 
-  constructor(private cafapiservice:CafApiService) { }
+  constructor(private cafapiservice:CafApiService,private router: Router) { }
 
   ngOnInit() {
     this.cafapiservice.readStudent().subscribe((students:Caf[])=>{
@@ -23,5 +25,6 @@ export class StudentDataComponent implements OnInit {
        this.students.splice(index, 1)
     });
   }
+
 
 }

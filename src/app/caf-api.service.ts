@@ -12,18 +12,20 @@ const httpOptions = {
 })
 export class CafApiService {
   PHP_API_SERVER = "http://127.0.0.1:80";
+  baseUrl: string = 'http://127.0.0.1:80/angular/skill-monks/skillphp/api/read.php';
 
   constructor(private httpClient: HttpClient) { }
 
   readStudent(): Observable<Caf[]>{
     return this.httpClient.get<Caf[]>(`${this.PHP_API_SERVER}/angular/skill-monks/skillphp/api/read.php`);
   }
-  getStudents(id: number): Observable<Caf> {
-    const url = `${this.PHP_API_SERVER}/angular/skill-monks/skillphp/api/read.php/${id}`;
-    return this.httpClient.get<Caf>(url).pipe(
-      tap(_ => console.log(`fetched product id=${id}`)),
-      catchError(this.handleError<Caf>(`getProduct id=${id}`))
-    );
+  getStudents(id: number) {
+    // const url = `${this.PHP_API_SERVER}/angular/skill-monks/skillphp/api/read.php/${id}`;
+    // return this.httpClient.get<Caf>(url).pipe(
+    //   tap(_ => console.log(`fetched product id=${id}`)),
+    //   catchError(this.handleError<Caf>(`getProduct id=${id}`))
+    // );
+    return this.httpClient.get<Caf>(this.baseUrl + '/' + id);
   }
   createStudent(caf:Caf):Observable<Caf>{
     return this.httpClient.post<Caf>(`${this.PHP_API_SERVER}/angular/skill-monks/skillphp/api/create.php`,caf);

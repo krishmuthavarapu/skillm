@@ -7,5 +7,4 @@ export class Caf{
     qualification:string;
     course_interested:string;
     city:string;
-    result:any
 }
