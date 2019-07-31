@@ -11,12 +11,18 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class StudentDataComponent implements OnInit {
   students: Caf[];
-
-  constructor(private cafapiservice:CafApiService,private router: Router) { }
+  infoMessage = '';
+  constructor(private cafapiservice:CafApiService,private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.cafapiservice.readStudent().subscribe((students:Caf[])=>{
       this.students=students;
+    });
+    this.route.queryParams
+    .subscribe(params => {
+      if(params.updated !== undefined && params.updated === 'true') {
+          this.infoMessage = 'Values Updated Succesfully';
+      }
     });
   }
   deleteStudent(id , index){

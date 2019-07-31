@@ -12,8 +12,6 @@ const httpOptions = {
 })
 export class CafApiService {
   PHP_API_SERVER = "http://127.0.0.1:80";
-  baseUrl: string = 'http://127.0.0.1:80/angular/skill-monks/skillphp/api/readone.php';
-
   constructor(private httpClient: HttpClient) { }
 
   readStudent(): Observable<Caf[]>{
