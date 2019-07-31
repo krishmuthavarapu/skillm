@@ -6,20 +6,19 @@
           (ngSubmit)="onSubmit()"
           class="text-center  pr-lg-5 pl-lg-5 pt-lg-3 pb-lg-3 p-3 "
         >
-        <!-- <input
-            type="text"
+        <input
+            type="hidden"
             formControlName="id"
             [ngClass]="{ 'is-invalid': submitted && f.id.errors }"
             class="form-control mb-3"
             placeholder="Your Name"
             name="id"
             ngDefaultControl
-            disabled
             required
           />
           <div *ngIf="submitted && f.id.errors" class="invalid-feedback">
             <div *ngIf="f.id.errors.required">name is required</div>
-          </div> -->
+          </div>
           <input
             type="text"
             formControlName="username"

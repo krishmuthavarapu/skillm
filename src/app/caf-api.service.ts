@@ -20,26 +20,14 @@ export class CafApiService {
     return this.httpClient.get<Caf[]>(`${this.PHP_API_SERVER}/angular/skill-monks/skillphp/api/read.php`);
   }
   getStudents(id: number) {
-    // const url = `${this.PHP_API_SERVER}/angular/skill-monks/skillphp/api/read.php/${id}`;
-    // return this.httpClient.get<Caf>(url).pipe(
-    //   tap(_ => console.log(`fetched product id=${id}`)),
-    //   catchError(this.handleError<Caf>(`getProduct id=${id}`))
-    // );
     return this.httpClient.get<Caf>(`${this.PHP_API_SERVER}/angular/skill-monks/skillphp/api/readone.php/?id=${id}`);
   }
   createStudent(caf:Caf):Observable<Caf>{
     return this.httpClient.post<Caf>(`${this.PHP_API_SERVER}/angular/skill-monks/skillphp/api/create.php`,caf);
   }
-  updateStudent(caf:Caf){
+  updateStudent(caf:Caf):Observable<Caf>{
     return this.httpClient.put<Caf>(`${this.PHP_API_SERVER}/angular/skill-monks/skillphp/api/update.php`,caf);
   }
-  // updateStudent (id, Caf): Observable<any>{
-  //   const url =`${this.PHP_API_SERVER}/angular/skill-monks/skillphp/api/update.php/${id}`;
-  //   return this.httpClient.put(url,Caf,httpOptions).pipe(
-  //     tap(_ => console.log(`update student id =${id}`)),
-  //     catchError(this.handleError<any>('updateStudent'))
-  //   );
-  // }
   deleteStudent(id:number){
     return this.httpClient.delete<Caf>(`${this.PHP_API_SERVER}/angular/skill-monks/skillphp/api/delete.php/?id=${id}`);
   }

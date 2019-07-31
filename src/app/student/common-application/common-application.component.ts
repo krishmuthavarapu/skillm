@@ -16,7 +16,6 @@ export class CommonApplicationComponent implements OnInit {
   CommonApplicationForm: FormGroup;
   submitted = false;
   returnUrl: string;
-  // selectedPolicy: Caf = { id : null , number:null, amount: null};
   caf: Caf[];
 
   constructor(private router: Router,private route:ActivatedRoute,private formBuilder: FormBuilder,private http: HttpClient,private cafapiservice: CafApiService) { }
@@ -45,38 +44,10 @@ export class CommonApplicationComponent implements OnInit {
     if (this.CommonApplicationForm.invalid) {
       return;
     }
-  //   this.cafapiservice.createPolicy(form.value).subscribe((caf:Caf)=>{
-  //     console.log("Data submitted",caf)
-  // });
-
       this.cafapiservice.createStudent(this.CommonApplicationForm.value).subscribe((caf: Caf)=>{
       console.log("Policy created, ", caf);
       this.router.navigate([this.returnUrl]);
     });
-  
-    // let params = new HttpParams();
-    // var fd:FormData=new FormData()
-    // fd.append('username', this.CommonApplicationForm.value.username);
-    // fd.append('number', this.CommonApplicationForm.value.number);
-    // fd.append('passing_year', this.CommonApplicationForm.value.passing_year);
-    // fd.append('email', this.CommonApplicationForm.value.email);
-    // fd.append('qualification', this.CommonApplicationForm.value.qualification);
-    // fd.append('course_interested', this.CommonApplicationForm.value.course_interested);
-    // fd.append('city', this.CommonApplicationForm.value.city);
-
-    // this.http.post('http://localhost/laravel57/public/api/adduserdetails', 
-    //  fd
-    // ).subscribe(
-    //   res => {
-    //     const response = res.toString();
-    // }
-    //   );
-
-   
-  
-
-    // display form values on success
-    // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.CommonApplicationForm.value, null, 4));
   }
    // Initialize params Object
   
